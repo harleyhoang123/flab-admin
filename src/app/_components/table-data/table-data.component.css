@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+
+.full-width {
+  font-size: 14px;
+  width: 100%;
+}
+
+/deep/ .mat-checkbox-frame,
+/deep/ .mat-checkbox-background {
+  border-radius: 50% !important;
+}

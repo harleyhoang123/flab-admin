@@ -1,0 +1,29 @@
+<div>
+  <div class="d-flex flex-row justify-content-between mb-3">
+    <div class="d-flex flex-column">
+      <div>
+        <h5>Workspace Service Config</h5>
+      </div>
+    </div>
+    <div class="d-flex flex-row">
+      <button class="btn btn-light btn-sm">
+        Edit
+      </button>
+      <button class="btn btn-light ms-3 btn-sm">
+        Delete
+      </button>
+      <button class="btn btn-warning ms-3 btn-sm">
+        Create
+      </button>
+    </div>
+  </div>
+  <div class="d-flex mb-4 justify-content-between">
+    <div class="d-flex flex-column">
+      <input placeholder="Find configs by key" class="small">
+    </div>
+    <div class="d-flex flex-column">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="settings" (click)="openSettingModal()"></mat-icon>
+    </div>
+  </div>
+  <app-table-data [data]="EmpData" [displayedColumns]="displayColumns"></app-table-data>
+</div>

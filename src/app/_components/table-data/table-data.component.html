@@ -1,0 +1,22 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-radio-group>
+    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+      <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+      <div *ngIf="column !== ' ' else data">
+        <td mat-cell *matCellDef="let emp">{{ emp[column] }}</td>
+      </div>
+      <ng-template #data>
+        <td mat-cell *matCellDef="let emp"><mat-radio-button [value]="emp.id" (click)="changeRow(emp.id)"></mat-radio-button></td>
+
+      </ng-template>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
+  </mat-radio-group>
+
+</table>
+<mat-paginator
+  #paginator
+  [pageSizeOptions]="[5,10, 20, 50, 100]"
+  showFirstLastButtons
+></mat-paginator>
